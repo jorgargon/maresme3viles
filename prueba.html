@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- estilos -->
+    <link rel="stylesheet" href="prueba.css"/>
+
+    <script>
+    // esta funcion comprueba si un elemento esta visible en pantalla
+        function isVisible(elm) {
+	        var rect = elm.getBoundingClientRect();
+	        var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+	        return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+}
+
+
+    // cuando se carga la página...
+        window.addEventListener('DOMContentLoaded', (ev0) => {
+                // asignamos un evento scroll...
+            window.addEventListener('scroll', (ev1) => {
+                        // y a todos los elementos con la clase paused...
+                document.querySelectorAll(".paused").forEach(elm => {
+                    if (isVisible(elm)) // que sean visibles...
+                        elm.classList.remove("paused"); // les quitamos la clase paused
+                })
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+    <section id="hero" class="paused">
+        <div class="wrapper">
+          <h1 class="anim-down">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id, suscipit!</h1>
+          <p class="anim-up">Lorem ipsum dolor sit amet ...</p>
+        </div>
+      </section>
+      
+      <section id="features" class="paused">
+        <div class="wrapper">
+          <h1 class="anim-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, obcaecati.</h1>
+          <p class="anim-right">Lorem, ipsum dolor sit amet ...</p>
+            <img class="anim-right" src="images/banner.png" height="100px" width="auto">
+            <img class="anim-right" src="images/logoPrincipal.png" height="100px" width="auto">
+            <img class="anim-right" src="images/sello.png" height="100px" width="auto">
+            <img class="anim-right" src="images/banner.png" height="100px" width="auto">
+            <img class="anim-right" src="images/logoPrincipal.png" height="100px" width="auto">
+            <img class="anim-right" src="images/sello.png" height="100px" width="auto">
+            <img class="anim-right" src="images/banner.png" height="100px" width="auto">
+            <img class="anim-right" src="images/logoPrincipal.png" height="100px" width="auto">
+            <img class="anim-right" src="images/sello.png" height="100px" width="auto">
+            <img class="anim-right" src="images/banner.png" height="100px" width="auto">
+            <img class="anim-right" src="images/logoPrincipal.png" height="100px" width="auto">
+            <img class="anim-right" src="images/sello.png" height="100px" width="auto">
+            <img class="anim-right" src="images/banner.png" height="100px" width="auto">
+            <img class="anim-right" src="images/logoPrincipal.png" height="100px" width="auto">
+            <img class="anim-right" src="images/sello.png" height="100px" width="auto">
+            <img class="anim-right" src="images/banner.png" height="100px" width="auto">
+            <img class="anim-right" src="images/logoPrincipal.png" height="100px" width="auto">
+            <img class="anim-right" src="images/sello.png" height="100px" width="auto">
+            <img class="anim-right" src="images/banner.png" height="100px" width="auto">
+            <img class="anim-right" src="images/logoPrincipal.png" height="100px" width="auto">
+            <img class="anim-right" src="images/sello.png" height="100px" width="auto">
+            
+        </div>
+      </section>
+</body>
+</html>
